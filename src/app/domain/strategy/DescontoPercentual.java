@@ -1,7 +1,5 @@
 package app.domain.strategy;
 
-import app.domain.composite.ComponenteProduto;
-
 public class DescontoPercentual implements DescontoStrategy {
 	
 	private double percentual;
@@ -11,7 +9,7 @@ public class DescontoPercentual implements DescontoStrategy {
 	}
 	
 	@Override
-	public ComponenteProduto aplicarDesconto(ComponenteProduto produto) {
-		return ()-> produto.getPreco() * (1 - percentual /100);
+	public double aplicarDesconto(double valor) {
+		return valor * (1 - percentual /100);
 	}
 }

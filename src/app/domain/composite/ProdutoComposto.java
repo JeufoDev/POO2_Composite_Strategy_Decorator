@@ -33,6 +33,6 @@ public class ProdutoComposto implements ComponenteProduto {
 	
 	@Override
 	public String toString() {
-		return nome +":"+ getPreco();
+		return nome;
 	}
 }

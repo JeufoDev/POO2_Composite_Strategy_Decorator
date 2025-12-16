@@ -23,23 +23,18 @@ public class Main {
 		tecladoMouse.addItem(mouse);
 		System.out.println(tecladoMouse.getPreco());
 		
-		//Strategy para desconto
-		DescontoFixo dezReais = new DescontoFixo(10);
-		ComponenteProduto tecladomMouseDesconto = dezReais.aplicarDesconto(tecladoMouse);
-		System.out.println(tecladomMouseDesconto.getPreco());
-		
-		DescontoPercentual dezPct = new DescontoPercentual(10);
-		ComponenteProduto descontoDezPct = dezPct.aplicarDesconto(tecladoMouse);
-		System.out.println(descontoDezPct.getPreco());
-		
-		SemDesconto semDesconto = new SemDesconto();
-		ComponenteProduto tecladoMouseSem = semDesconto.aplicarDesconto(tecladoMouse);
-		System.out.println(tecladoMouseSem.getPreco());
-		
-		
+
 		//Decorator
-		ComponenteProduto produtoFinal = new FreteDecorator(new EmbalagemDecorator(tecladomMouseDesconto, 5), 18);
+		ComponenteProduto produtoFinal = new FreteDecorator(new EmbalagemDecorator(tecladoMouse, 5), 18);
 		System.out.println(produtoFinal.getPreco());
+		
+		//Strategy
+		DescontoFixo dezReais = new DescontoFixo(10);
+		DescontoPercentual dezPct = new DescontoPercentual(10);
+		SemDesconto semDesconto = new SemDesconto();
+		
+		double valorFinal = dezReais.aplicarDesconto(produtoFinal.getPreco());
+		System.out.println(valorFinal);
 	}
 
 }

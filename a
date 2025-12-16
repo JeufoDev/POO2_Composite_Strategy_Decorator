@@ -1,0 +1,23 @@
+src/
+ └── app/
+      │
+      ├── domain/
+      │     ├── composite/
+      │     │      ├── ProductComponent.java     ← Interface do Composite
+      │     │      ├── SimpleProduct.java
+      │     │      └── CompositeProduct.java
+      │     │
+      │     ├── strategy/
+      │     │      ├── DiscountStrategy.java     ← Interface do Strategy
+      │     │      ├── PercentageDiscount.java
+      │     │      ├── FixedDiscount.java
+      │     │      └── NoDiscount.java
+      │     │
+      │     └── decorator/
+      │            ├── PriceDecorator.java        ← Classe abstrata base
+      │            ├── TaxDecorator.java
+      │            ├── ShippingDecorator.java
+      │            └── GiftWrapDecorator.java
+      │
+      │
+      └── Main.java

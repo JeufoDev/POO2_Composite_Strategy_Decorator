@@ -1,7 +1,5 @@
 package app.domain.strategy;
 
-import app.domain.composite.ComponenteProduto;
-
 public class DescontoFixo implements DescontoStrategy{
 	
 	private double valor;
@@ -11,7 +9,7 @@ public class DescontoFixo implements DescontoStrategy{
 	}
 	
 	@Override
-	public ComponenteProduto aplicarDesconto(ComponenteProduto produto) {
-		return ()-> produto.getPreco() - valor ;
+	public double aplicarDesconto(double valor) {
+		return valor - this.valor ;
 	}
 }
